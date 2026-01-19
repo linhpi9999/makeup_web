@@ -1,0 +1,13 @@
+/* =========================
+   Pages (index + pages khác)
+   ========================= */
+
+/* Đây là file để bạn override theo từng trang nếu cần.
+   Hiện tại, index đã đủ đẹp nên để trống hoặc thêm rất ít. */
+
+/* Ví dụ: nếu muốn section tiêu đề ở các trang con khác */
+.page-hero-title {
+  margin: 0;
+  font-size: clamp(26px, 3vw, 44px);
+  letter-spacing: -0.03em;
+}

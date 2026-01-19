@@ -1,0 +1,68 @@
+/* =========================
+   Thỏ MakeUp - Design Tokens
+   ========================= */
+
+:root {
+  /* Layout */
+  --container: 1120px;
+  --gutter: 18px; /* lề hẹp hơn */
+  --radius: 18px;
+
+  /* Base */
+  --bg: #faf7f5;       /* porcelain */
+  --surface: #ffffff;  /* ivory */
+  --muted: #f1e9e4;    /* sand */
+
+  --text: #1f1a1c;       /* charcoal */
+  --text-muted: #4a3f45; /* graphite */
+
+  /* Brand */
+  --primary: #d84a6a;        /* rose */
+  --primary-hover: #b83252;  /* berry */
+  --primary-soft: #f6c6d0;   /* blush */
+
+  /* Premium */
+  --premium: #d6b27c;        /* champagne */
+  --premium-hover: #b8925a;
+
+  /* Trendy accents */
+  --accent: #b9a7ff; /* lavender smoke */
+  --calm: #a8c6b0;   /* sage */
+
+  /* UI */
+  --border: rgba(31, 26, 28, 0.12);
+  --shadow: 0 14px 40px rgba(31, 26, 28, 0.12);
+  --shadow-soft: 0 10px 24px rgba(31, 26, 28, 0.10);
+  --ring: rgba(216, 74, 106, 0.32);
+
+  /* Typography */
+  --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji",
+    "Segoe UI Emoji";
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  --bg: #0f0c0e;
+  --surface: #171216;
+  --muted: #221a1f;
+
+  --text: #f6f1f3;
+  --text-muted: #cbbec4;
+
+  --primary: #ff6b8c;
+  --primary-hover: #e95477;
+  --primary-soft: rgba(255, 107, 140, 0.20);
+
+  --premium: #e2c08d;
+  --premium-hover: #cda66d;
+
+  --accent: #c4b7ff;
+  --calm: #9fd1b2;
+
+  --border: rgba(246, 241, 243, 0.12);
+  --shadow: 0 16px 48px rgba(0, 0, 0, 0.40);
+  --shadow-soft: 0 12px 28px rgba(0, 0, 0, 0.35);
+  --ring: rgba(255, 107, 140, 0.35);
+}

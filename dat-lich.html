@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="vi" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Đặt lịch | Thỏ MakeUp</title>
+    <meta name="description" content="Đặt lịch dịch vụ makeup hoặc đăng ký khóa học tại Thỏ MakeUp." />
+
+    <link rel="icon" href="./assets/images/brand/favicon/favicon.ico" />
+    <link rel="stylesheet" href="./assets/css/tokens.css" />
+    <link rel="stylesheet" href="./assets/css/base.css" />
+    <link rel="stylesheet" href="./assets/css/components.css" />
+    <link rel="stylesheet" href="./assets/css/sections.css" />
+    <link rel="stylesheet" href="./assets/css/pages.css" />
+  </head>
+
+  <body id="top">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../index.html">
+          <img class="brand-logo" src="./assets/images/logo.jpg" alt="Thỏ MakeUp" width="34" height="34" />
+          <div class="brand-text">
+            <div class="brand-name">Thỏ MakeUp</div>
+            <div class="brand-tag">Khóa học • Dịch vụ • Bridal</div>
+          </div>
+        </a>
+
+        <nav class="nav" aria-label="Điều hướng chính">
+          <a class="nav-link" href="./index.html">Trang chủ</a>
+          <a class="nav-link" href="./khoa-hoc.html">Khóa học</a>
+          <a class="nav-link" href="./dich-vu.html">Dịch vụ</a>
+          <a class="nav-link" href="./bang-gia.html">Bảng giá</a>
+          <a class="nav-link is-active" href="./dat-lich.html">Đặt lịch</a>
+          <a class="nav-link" href="./lien-he.html">Liên hệ</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="btn btn-ghost" type="button" id="themeToggle" aria-label="Đổi giao diện">
+            <span class="icon">☾</span><span class="hide-sm">Giao diện</span>
+          </button>
+          <a class="btn btn-primary" href="./dat-lich.html">Gửi yêu cầu <span class="btn-arrow">→</span></a>
+          <button class="burger" type="button" id="burger" aria-label="Mở menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-drawer" id="drawer" aria-hidden="true">
+        <div class="container drawer-inner">
+          <a class="drawer-link" href="./index.html">Trang chủ</a>
+          <a class="drawer-link" href="./khoa-hoc.html">Khóa học</a>
+          <a class="drawer-link" href="./dich-vu.html">Dịch vụ</a>
+          <a class="drawer-link" href="./bang-gia.html">Bảng giá</a>
+          <a class="drawer-link" href="./dat-lich.html">Đặt lịch</a>
+          <a class="drawer-link" href="./lien-he.html">Liên hệ</a>
+          <div class="drawer-cta">
+            <a class="btn btn-primary btn-block" href="./dat-lich.html">Gửi yêu cầu</a>
+            <a class="btn btn-outline btn-block" href="./bang-gia.html">Xem bảng giá</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h1 class="page-hero-title">Đặt lịch</h1>
+              <p class="section-subtitle">Điền form để Thỏ xác nhận lịch trống + tư vấn look/khóa phù hợp.</p>
+            </div>
+          </div>
+
+          <div class="grid cards-2">
+            <article class="card">
+              <div class="card-body">
+                <h3 class="card-title">Form đặt lịch</h3>
+                <p class="card-desc">Mặc định đây là form tĩnh. Bạn có thể nối sang Google Form / Zalo / API sau.</p>
+
+                <form style="margin-top:14px; display:grid; gap:10px" onsubmit="return handleSubmit(event)">
+                  <label class="card-desc">
+                    Họ và tên
+                    <input required name="name" placeholder="Ví dụ: Ngọc Anh" style="margin-top:6px; width:100%; padding:12px 12px; border-radius:14px; border:1px solid var(--border); background:var(--surface); color:var(--text);" />
+                  </label>
+
+                  <label class="card-desc">
+                    Số điện thoại / Zalo
+                    <input required name="phone" inputmode="tel" placeholder="09xx xxx xxx" style="margin-top:6px; width:100%; padding:12px 12px; border-radius:14px; border:1px solid var(--border); background:var(--surface); color:var(--text);" />
+                  </label>
+
+                  <label class="card-desc">
+                    Bạn muốn đặt
+                    <select name="type" required style="margin-top:6px; width:100%; padding:12px 12px; border-radius:14px; border:1px solid var(--border); background:var(--surface); color:var(--text);">
+                      <option value="">-- Chọn --</option>
+                      <option value="service">Dịch vụ makeup</option>
+                      <option value="course">Khóa học</option>
+                    </select>
+                  </label>
+
+                  <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px">
+                    <label class="card-desc">
+                      Ngày
+                      <input required name="date" type="date" style="margin-top:6px; width:100%; padding:12px 12px; border-radius:14px; border:1px solid var(--border); background:var(--surface); color:var(--text);" />
+                    </label>
+                    <label class="card-desc">
+                      Giờ
+                      <input required name="time" type="time" style="margin-top:6px; width:100%; padding:12px 12px; border-radius:14px; border:1px solid var(--border); background:var(--surface); color:var(--text);" />
+                    </label>
+                  </div>
+
+                  <label class="card-desc">
+                    Ghi chú (outfit, tone mong muốn, địa điểm nếu tận nơi...)
+                    <textarea name="note" rows="4" placeholder="Ví dụ: đi tiệc tối, tone hồng đào, chụp flash..." style="margin-top:6px; width:100%; padding:12px 12px; border-radius:14px; border:1px solid var(--border); background:var(--surface); color:var(--text);"></textarea>
+                  </label>
+
+                  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:6px">
+                    <button class="btn btn-primary" type="submit">Gửi yêu cầu</button>
+                    <a class="btn btn-outline" href="./lien-he.html">Nhắn trực tiếp</a>
+                  </div>
+
+                  <div id="formMsg" class="card-desc" style="display:none; color:var(--text-muted)"></div>
+                </form>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-body">
+                <div class="card-top">
+                  <span class="tag tag-soft">Tip</span>
+                  <span class="tag tag-premium">Bridal</span>
+                </div>
+                <h3 class="card-title">Mẹo để chốt lịch nhanh</h3>
+                <p class="card-desc">
+                  • Gửi trước ảnh outfit/áo dài/đầm <br />
+                  • Nếu cô dâu: gửi giờ make-up + giờ đón dâu <br />
+                  • Nếu da đang treatment: báo trước 3–5 ngày
+                </p>
+
+                <div style="margin-top:14px">
+                  <hr class="section-divider" />
+                </div>
+
+                <div style="margin-top:14px; display:grid; gap:10px">
+                  <div class="quote">
+                    <blockquote><strong>Giờ làm việc:</strong> 09:00 – 20:00</blockquote>
+                    <figcaption>— có thể hẹn sớm/muộn tuỳ lịch</figcaption>
+                  </div>
+                  <div class="quote">
+                    <blockquote><strong>Hotline/Zalo:</strong> 09xx xxx xxx</blockquote>
+                    <figcaption>— phản hồi nhanh</figcaption>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="brand brand--footer">
+            <img class="brand-logo" src="./assets/images/logo.jpg" alt="Thỏ MakeUp" width="34" height="34" />
+            <div class="brand-text">
+              <div class="brand-name">Thỏ MakeUp</div>
+              <div class="brand-tag">Khóa học • Dịch vụ • Bridal</div>
+            </div>
+          </div>
+          <p class="footer-desc">Makeup sạch - sang - hợp gu. Học viên được sửa bài/feedback để lên tay nhanh.</p>
+          <div class="footer-social">
+            <a class="chip" href="#">Facebook</a><a class="chip" href="#">Instagram</a><a class="chip" href="#">TikTok</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-title">Danh mục</div>
+          <a class="footer-link" href="./khoa-hoc.html">Khóa học</a>
+          <a class="footer-link" href="./dich-vu.html">Dịch vụ</a>
+          <a class="footer-link" href="./bang-gia.html">Bảng giá</a>
+          <a class="footer-link" href="./dat-lich.html">Đặt lịch</a>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-title">Hỗ trợ</div>
+          <a class="footer-link" href="./lien-he.html">Liên hệ</a>
+          <a class="footer-link" href="./chinh-sach/dieu-khoan.html">Điều khoản</a>
+          <a class="footer-link" href="./chinh-sach/bao-mat.html">Bảo mật</a>
+          <a class="footer-link" href="./chinh-sach/hoan-tien.html">Hoàn tiền</a>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-title">Thông tin</div>
+          <div class="footer-mini">Giờ làm việc: 09:00 – 20:00</div>
+          <div class="footer-mini">Hotline/Zalo: 09xx xxx xxx</div>
+          <div class="footer-mini">Studio: (điền địa chỉ)</div>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <div class="footer-copy">© <span id="year"></span> Thỏ MakeUp. All rights reserved.</div>
+        <a class="link" href="#top">Lên đầu trang ↑</a>
+      </div>
+    </footer>
+
+    <script>
+      function handleSubmit(e) {
+        e.preventDefault();
+        const msg = document.getElementById("formMsg");
+        msg.style.display = "block";
+        msg.textContent = "Đã ghi nhận yêu cầu! (Demo tĩnh) — Bạn hãy nối form này sang Zalo/Google Form/API để nhận dữ liệu.";
+        return false;
+      }
+
+      (function () {
+        const root = document.documentElement;
+        const toggle = document.getElementById("themeToggle");
+        const burger = document.getElementById("burger");
+        const drawer = document.getElementById("drawer");
+        const year = document.getElementById("year");
+        if (year) year.textContent = String(new Date().getFullYear());
+
+        const saved = localStorage.getItem("theme");
+        if (saved === "dark" || saved === "light") root.setAttribute("data-theme", saved);
+
+        toggle?.addEventListener("click", () => {
+          const now = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+          root.setAttribute("data-theme", now);
+          localStorage.setItem("theme", now);
+        });
+
+        function setDrawer(open) {
+          burger?.setAttribute("aria-expanded", open ? "true" : "false");
+          drawer?.setAttribute("aria-hidden", open ? "false" : "true");
+          drawer?.classList.toggle("is-open", open);
+        }
+        burger?.addEventListener("click", () => setDrawer(!drawer?.classList.contains("is-open")));
+        drawer?.addEventListener("click", (e) => {
+          if (e.target === drawer) setDrawer(false);
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="vi" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Thỏ MakeUp | Khóa học makeup & Dịch vụ makeup</title>
+    <meta
+      name="description"
+      content="Thỏ MakeUp - Khóa học makeup dễ áp dụng, dịch vụ makeup đi tiệc, cô dâu, kỷ yếu. Đặt lịch nhanh - xem bảng giá - ưu đãi mới."
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Thỏ MakeUp | Khóa học & Dịch vụ makeup" />
+    <meta
+      property="og:description"
+      content="Khóa học makeup thực chiến + dịch vụ makeup cao cấp. Đặt lịch nhanh."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/images/logo.jpg" />
+
+    <link rel="icon" href="assets/images/logo.jpg" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/tokens.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/sections.css" />
+    <link rel="stylesheet" href="assets/css/pages.css" />
+  
+    <!-- Added image helpers (non-breaking) -->
+    <style>
+      /*
+        Image layer: thêm ảnh bằng background-image để GIỮ NGUYÊN tỉ lệ/khối layout hiện có.
+        Chỉ cần đặt đúng file ảnh vào các đường dẫn dưới đây.
+      */
+
+      /* HERO image (khung đã có .hero-image) */
+      .hero-image{
+        /* Ưu tiên ảnh thật, fallback bằng gradient nếu chưa có file */
+        background-image:
+          url('assets/images/hero.jpg'),
+          radial-gradient(120% 120% at 20% 10%, rgba(255,210,226,.85) 0%, rgba(255,210,226,0) 55%),
+          radial-gradient(120% 120% at 80% 30%, rgba(255,226,180,.7) 0%, rgba(255,226,180,0) 60%),
+          linear-gradient(135deg, rgba(255,232,243,.95), rgba(255,245,228,.95));
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: inherit;
+        /* đảm bảo ảnh không làm thay đổi tỉ lệ khung (khung do CSS sẵn có quyết định) */
+        overflow: hidden;
+      }
+
+      /* Card media (bán chạy) */
+      .card-media,
+      .media-wide{
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      /* Best sellers: 3 ảnh khác nhau */
+      .media-rose{
+        background-image:
+          url('assets/images/daily.jpg'),
+          radial-gradient(120% 120% at 20% 10%, rgba(255,206,226,.9) 0%, rgba(255,206,226,0) 55%),
+          linear-gradient(135deg, rgba(255,232,243,.95), rgba(255,245,228,.95));
+      }
+      .media-gold{
+        background-image:
+          url('assets/images/bridal.jpg'),
+          radial-gradient(120% 120% at 15% 10%, rgba(255,226,180,.9) 0%, rgba(255,226,180,0) 55%),
+          linear-gradient(135deg, rgba(255,245,228,.95), rgba(255,232,243,.92));
+      }
+      .media-lav{
+        background-image:
+          url('assets/images/contour.jpg'),
+          radial-gradient(120% 120% at 25% 15%, rgba(226,214,255,.9) 0%, rgba(226,214,255,0) 58%),
+          linear-gradient(135deg, rgba(245,241,255,.95), rgba(255,245,228,.9));
+      }
+
+      /* Services: ảnh khung rộng */
+      .media-wide.media-gold{
+        background-image:
+          url('assets/images/dich-vu/bridal-hair.jpg'),
+          radial-gradient(120% 120% at 15% 10%, rgba(255,226,180,.9) 0%, rgba(255,226,180,0) 55%),
+          linear-gradient(135deg, rgba(255,245,228,.95), rgba(255,232,243,.92));
+      }
+      .media-wide.media-rose{
+        background-image:
+          url('assets/images/dich-vu/party-yearbook.jpg'),
+          radial-gradient(120% 120% at 20% 10%, rgba(255,206,226,.9) 0%, rgba(255,206,226,0) 55%),
+          linear-gradient(135deg, rgba(255,232,243,.95), rgba(255,245,228,.95));
+      }
+
+      /* Optional: làm ảnh trông “thật” hơn (nhẹ) nhưng không đổi layout */
+      .hero-image,
+      .card-media,
+      .media-wide{
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,.35);
+        filter: saturate(1.03) contrast(1.02);
+      }
+
+      /* Mobile: tăng độ rõ nét khi ảnh là portrait */
+      @media (max-width: 640px){
+        .hero-image{background-position: 50% 25%;}
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./index.html" aria-label="Thỏ MakeUp - Trang chủ">
+          <img
+            class="brand-logo"
+            src="assets/images/logo.jpg"
+            alt="Thỏ MakeUp"
+            width="34"
+            height="34"
+            loading="eager"
+          />
+          <div class="brand-text">
+            <div class="brand-name">Thỏ MakeUp</div>
+            <div class="brand-tag">Khóa học • Dịch vụ • Bridal</div>
+          </div>
+        </a>
+
+        <nav class="nav" aria-label="Điều hướng chính">
+          <a class="nav-link is-active" href="./index.html">Trang chủ</a>
+          <a class="nav-link" href="./khoa-hoc.html">Khóa học</a>
+          <a class="nav-link" href="./dich-vu.html">Dịch vụ</a>
+          <a class="nav-link" href="./bang-gia.html">Bảng giá</a>
+          <a class="nav-link" href="./dat-lich.html">Đặt lịch</a>
+          <a class="nav-link" href="./lien-he.html">Liên hệ</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="btn btn-ghost" type="button" id="themeToggle" aria-label="Đổi giao diện">
+            <span class="icon" aria-hidden="true">☾</span>
+            <span class="hide-sm">Giao diện</span>
+          </button>
+
+          <a class="btn btn-primary" href="./dat-lich.html">
+            Đặt lịch ngay
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <button class="burger" type="button" id="burger" aria-label="Mở menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile drawer -->
+      <div class="mobile-drawer" id="drawer" aria-hidden="true">
+        <div class="container drawer-inner">
+          <a class="drawer-link" href="./index.html">Trang chủ</a>
+          <a class="drawer-link" href="./khoa-hoc.html">Khóa học</a>
+          <a class="drawer-link" href="./dich-vu.html">Dịch vụ</a>
+          <a class="drawer-link" href="./bang-gia.html">Bảng giá</a>
+          <a class="drawer-link" href="./dat-lich.html">Đặt lịch</a>
+          <a class="drawer-link" href="./lien-he.html">Liên hệ</a>
+
+          <div class="drawer-cta">
+            <a class="btn btn-primary btn-block" href="./dat-lich.html">Đặt lịch ngay</a>
+            <a class="btn btn-outline btn-block" href="./khoa-hoc.html">Xem khóa học</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="section hero">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <div class="badge">
+              <span class="dot"></span>
+              Trending look 2026 • Tập trung “đẹp tự nhiên”
+            </div>
+
+            <h1 class="hero-title">
+              Makeup <span class="text-gradient">đúng gu</span>, lên hình
+              <span class="text-gradient">cực xinh</span>
+            </h1>
+
+            <p class="hero-subtitle">
+              “Thỏ MakeUp” cung cấp <strong>khóa học makeup thực chiến</strong> và
+              <strong>dịch vụ makeup</strong> đi tiệc, cô dâu, kỷ yếu — tối ưu thần thái và
+              chất lượng ảnh.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="./khoa-hoc.html">
+                Xem khóa học
+                <span class="btn-arrow" aria-hidden="true">→</span>
+              </a>
+              <a class="btn btn-outline" href="./dich-vu.html">Xem dịch vụ</a>
+            </div>
+
+            <div class="hero-stats">
+              <div class="stat">
+                <div class="stat-number">4.9/5</div>
+                <div class="stat-label">Đánh giá học viên</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number">300+</div>
+                <div class="stat-label">Học viên mỗi năm</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number">Bridal</div>
+                <div class="stat-label">Gói makeup cao cấp</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-card">
+              <div class="hero-card-top">
+                <div class="pill pill-premium">Premium</div>
+                <div class="pill">Tư vấn tone da</div>
+              </div>
+
+              <div class="hero-image" role="img" aria-label="Ảnh makeup của Thỏ MakeUp"></div>
+
+              <div class="hero-card-bottom">
+                <div class="mini">
+                  <div class="mini-title">Look signature</div>
+                  <div class="mini-desc">Blush mềm • môi bóng • mắt clean</div>
+                </div>
+                <a class="btn btn-soft" href="./dat-lich.html">Đặt lịch</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Line giữa Hero và Bán chạy -->
+      <div class="container">
+        <hr class="section-divider" />
+      </div>
+
+      <!-- Best sellers -->
+      <section class="section section-alt">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2 class="section-title">Khóa học bán chạy</h2>
+              <p class="section-subtitle">Lộ trình ngắn gọn, làm được ngay, feedback chi tiết.</p>
+            </div>
+            <a class="link" href=".khoa-hoc.html">Xem tất cả →</a>
+          </div>
+
+          <div class="grid cards-3">
+            <article class="card">
+              <div class="card-media media-rose"></div>
+              <div class="card-body">
+                <div class="card-top">
+                  <span class="tag">Beginner</span>
+                  <span class="tag tag-soft">Online</span>
+                </div>
+                <h3 class="card-title">Makeup hằng ngày “xinh tự nhiên”</h3>
+                <p class="card-desc">
+                  Nền mỏng bền • che khuyết điểm nhanh • layout mắt đơn giản dễ áp dụng.
+                </p>
+                <div class="card-row">
+                  <div class="price">
+                    <span class="price-main">799k</span>
+                    <span class="price-sub">/ khóa</span>
+                  </div>
+                  <a class="btn btn-outline btn-sm" href="./khoa-hoc-chi-tiet.html">Chi tiết</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-media media-gold"></div>
+              <div class="card-body">
+                <div class="card-top">
+                  <span class="tag tag-premium">Bridal</span>
+                  <span class="tag tag-soft">Offline</span>
+                </div>
+                <h3 class="card-title">Makeup cô dâu: bền - sang - lên hình</h3>
+                <p class="card-desc">
+                  Nền khóa chặt • highlight đúng điểm • xử lý mắt/mi cho từng dáng mắt.
+                </p>
+                <div class="card-row">
+                  <div class="price">
+                    <span class="price-main">2tr9</span>
+                    <span class="price-sub">/ khóa</span>
+                  </div>
+                  <a class="btn btn-outline btn-sm" href="./khoa-hoc-chi-tiet.html">Chi tiết</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-media media-lav"></div>
+              <div class="card-body">
+                <div class="card-top">
+                  <span class="tag">Pro</span>
+                  <span class="tag tag-soft">Combo</span>
+                </div>
+                <h3 class="card-title">Nâng cấp kỹ thuật nền & contour</h3>
+                <p class="card-desc">
+                  Chọn base theo tone da • fix bền • contour “tự nhiên nhưng có góc”.
+                </p>
+                <div class="card-row">
+                  <div class="price">
+                    <span class="price-main">1tr5</span>
+                    <span class="price-sub">/ khóa</span>
+                  </div>
+                  <a class="btn btn-outline btn-sm" href="./khoa-hoc-chi-tiet.html">Chi tiết</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2 class="section-title">Dịch vụ nổi bật</h2>
+              <p class="section-subtitle">Đặt lịch nhanh • tư vấn look phù hợp outfit & bối cảnh.</p>
+            </div>
+            <a class="link" href="./dich-vu.html">Xem tất cả →</a>
+          </div>
+
+          <div class="grid cards-2">
+            <article class="card card-wide">
+              <div class="card-body">
+                <div class="card-top">
+                  <span class="tag tag-premium">VIP</span>
+                  <span class="tag tag-soft">Tại studio</span>
+                </div>
+                <h3 class="card-title">Makeup cô dâu + làm tóc</h3>
+                <p class="card-desc">
+                  Tập trung độ bền, độ mịn và cảm giác “sang” khi lên hình/ánh đèn. Tư vấn phụ kiện kèm.
+                </p>
+                <div class="card-row">
+                  <div class="price">
+                    <span class="price-main">từ 1tr8</span>
+                    <span class="price-sub">/ lượt</span>
+                  </div>
+                  <a class="btn btn-primary btn-sm" href="./dat-lich.html">Đặt lịch</a>
+                </div>
+              </div>
+              <div class="card-media media-wide media-gold"></div>
+            </article>
+
+            <article class="card card-wide">
+              <div class="card-body">
+                <div class="card-top">
+                  <span class="tag">Hot</span>
+                  <span class="tag tag-soft">Tận nơi</span>
+                </div>
+                <h3 class="card-title">Makeup đi tiệc / kỷ yếu</h3>
+                <p class="card-desc">
+                  Layout tôn đường nét • phối màu hợp tone da • xử lý nền chụp flash đẹp + xu hướng hiện đại.
+                </p>
+                <div class="card-row">
+                  <div class="price">
+                    <span class="price-main">từ 450k</span>
+                    <span class="price-sub">/ lượt</span>
+                  </div>
+                  <a class="btn btn-outline btn-sm" href="./dat-lich.html">Đặt lịch</a>
+                </div>
+              </div>
+              <div class="card-media media-wide media-rose"></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="section section-alt">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2 class="section-title">Feedback thật</h2>
+              <p class="section-subtitle">Nhẹ nhàng, sạch sẽ, lên hình “ăn ảnh”.</p>
+            </div>
+          </div>
+
+          <div class="grid cards-3">
+            <figure class="quote">
+              <blockquote>
+                “Học xong tự makeup đi làm được luôn. Phần nền mỏng mà che tốt, Thỏ sửa từng bước cực kỹ.”
+              </blockquote>
+              <figcaption>— Mai Anh</figcaption>
+            </figure>
+
+            <figure class="quote">
+              <blockquote>
+                “Makeup cô dâu bền từ sáng tới tối, lên hình nhìn rất sang và không bị dày.”
+              </blockquote>
+              <figcaption>— Vy Trần</figcaption>
+            </figure>
+
+            <figure class="quote">
+              <blockquote>
+                “Đi tiệc chụp flash không bị bệt. Tone môi và má đúng gu mình.”
+              </blockquote>
+              <figcaption>— Ngọc Hân</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section">
+        <div class="container">
+          <div class="cta">
+            <div class="cta-content">
+              <h2 class="cta-title">Sẵn sàng “xinh đúng lúc”?</h2>
+              <p class="cta-subtitle">
+                Chọn <strong>dịch vụ</strong> hoặc <strong>khóa học</strong> phù hợp, đặt lịch trong 1 phút.
+              </p>
+            </div>
+            <div class="cta-actions">
+              <a class="btn btn-primary" href="./dat-lich.html">Đặt lịch</a>
+              <a class="btn btn-outline" href="./bang-gia.html">Xem bảng giá</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="brand brand--footer">
+            <img
+              class="brand-logo"
+              src="assets/images/logo.jpg"
+              alt="Thỏ MakeUp"
+              width="34"
+              height="34"
+              loading="lazy"
+            />
+            <div class="brand-text">
+              <div class="brand-name">Thỏ MakeUp</div>
+              <div class="brand-tag">Khóa học • Dịch vụ • Bridal</div>
+            </div>
+          </div>
+
+          <p class="footer-desc">
+            Makeup sạch - sang - hợp gu. Học viên được sửa bài/feedback để lên tay nhanh.
+          </p>
+
+          <div class="footer-social">
+            <a class="chip" href="#" aria-label="Facebook">Facebook</a>
+            <a class="chip" href="#" aria-label="Instagram">Instagram</a>
+            <a class="chip" href="#" aria-label="TikTok">TikTok</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-title">Danh mục</div>
+          <a class="footer-link" href="./khoa-hoc.html">Khóa học</a>
+          <a class="footer-link" href="./dich-vu.html">Dịch vụ</a>
+          <a class="footer-link" href="./bang-gia.html">Bảng giá</a>
+          <a class="footer-link" href="./dat-lich.html">Đặt lịch</a>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-title">Hỗ trợ</div>
+          <a class="footer-link" href="./lien-he.html">Liên hệ</a>
+          <a class="footer-link" href="./chinh-sach/dieu-khoan.html">Điều khoản</a>
+          <a class="footer-link" href="./chinh-sach/bao-mat.html">Bảo mật</a>
+          <a class="footer-link" href="./chinh-sach/hoan-tien.html">Hoàn tiền</a>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-title">Thông tin</div>
+          <div class="footer-mini">Giờ làm việc: 09:00 – 20:00</div>
+          <div class="footer-mini">Hotline/Zalo: 09xx xxx xxx</div>
+          <div class="footer-mini">Studio: (điền địa chỉ)</div>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <div class="footer-copy">© <span id="year"></span> Thỏ MakeUp. All rights reserved.</div>
+        <a class="link" href="#top">Lên đầu trang ↑</a>
+      </div>
+    </footer>
+
+    <!-- JS nhỏ gọn (tuỳ chọn) để đổi theme + menu mobile + year -->
+    <script>
+      (function () {
+        const root = document.documentElement;
+        const toggle = document.getElementById("themeToggle");
+        const burger = document.getElementById("burger");
+        const drawer = document.getElementById("drawer");
+        const year = document.getElementById("year");
+        if (year) year.textContent = String(new Date().getFullYear());
+
+        // theme
+        const saved = localStorage.getItem("theme");
+        if (saved === "dark" || saved === "light") root.setAttribute("data-theme", saved);
+
+        toggle?.addEventListener("click", () => {
+          const now = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+          root.setAttribute("data-theme", now);
+          localStorage.setItem("theme", now);
+        });
+
+        // mobile drawer
+        function setDrawer(open) {
+          burger?.setAttribute("aria-expanded", open ? "true" : "false");
+          drawer?.setAttribute("aria-hidden", open ? "false" : "true");
+          drawer?.classList.toggle("is-open", open);
+        }
+        burger?.addEventListener("click", () => {
+          const open = drawer?.classList.contains("is-open");
+          setDrawer(!open);
+        });
+        drawer?.addEventListener("click", (e) => {
+          if (e.target === drawer) setDrawer(false);
+        });
+      })();
+    </script>
+  </body>
+</html>
